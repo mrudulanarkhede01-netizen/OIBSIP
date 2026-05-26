@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SecureAuth — Register</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <div class="page-wrapper">
+    <div class="card">
+
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <span class="brand-name">SecureAuth</span>
+      </div>
+
+      <h1>Create an account</h1>
+      <p class="subtitle">Register to access the secured portal</p>
+
+      <div class="alert alert-error" id="reg-error"></div>
+      <div class="alert alert-success" id="reg-success"></div>
+
+      <form id="register-form" novalidate>
+        <div class="field">
+          <label for="fullname">Full name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Firstname Lastname" autocomplete="name" required />
+          <span class="field-error" id="name-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="abc@gmail.com" autocomplete="email" required />
+          <span class="field-error" id="email-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="password" name="password" placeholder="Min. 8 characters" autocomplete="new-password" required />
+            <button type="button" class="toggle-pass" onclick="togglePassword('password', this)" aria-label="Show password">
+              <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+          <div class="strength-bar">
+            <div class="strength-seg" id="s1"></div>
+            <div class="strength-seg" id="s2"></div>
+            <div class="strength-seg" id="s3"></div>
+            <div class="strength-seg" id="s4"></div>
+          </div>
+          <span class="strength-label" id="strength-label"></span>
+          <span class="field-error" id="pass-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="confirm-password">Confirm password</label>
+          <div class="input-wrapper">
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter password" autocomplete="new-password" required />
+            <button type="button" class="toggle-pass" onclick="togglePassword('confirm-password', this)" aria-label="Show password">
+              <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+          <span class="field-error" id="confirm-error"></span>
+        </div>
+
+        <button type="submit" class="btn-primary" id="register-btn">
+          <span class="btn-label">Create account</span>
+          <span class="btn-loader" style="display:none">Creating…</span>
+        </button>
+      </form>
+
+      <div class="divider"><span>or</span></div>
+
+      <p class="link-row">Already have an account? <a href="../index.html">Sign in</a></p>
+    </div>
+  </div>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/register.js"></script>
+</body>
+</html>

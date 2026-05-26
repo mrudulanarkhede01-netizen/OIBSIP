@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SecureAuth — Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+      <span class="brand-name">SecureAuth</span>
+    </div>
+    <div class="topbar-right">
+      <span class="badge-secure">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        Authenticated
+      </span>
+      <button class="btn-logout" id="logout-btn" onclick="logout()">Sign out</button>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="dashboard-card">
+
+      <div class="avatar" id="user-avatar">FL</div>
+      <h2 id="user-name">Firstname Lastname</h2>
+      <p class="user-email" id="user-email">abc@gmail.com</p>
+
+      <div class="info-grid">
+        <div class="info-tile">
+          <div class="info-tile-label">Status</div>
+          <div class="info-tile-val success">Active</div>
+        </div>
+        <div class="info-tile">
+          <div class="info-tile-label">Role</div>
+          <div class="info-tile-val">Member</div>
+        </div>
+        <div class="info-tile">
+          <div class="info-tile-label">Logged in at</div>
+          <div class="info-tile-val" id="login-time">—</div>
+        </div>
+        <div class="info-tile">
+          <div class="info-tile-label">Auth method</div>
+          <div class="info-tile-val">Password</div>
+        </div>
+      </div>
+
+      <div class="secured-notice">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        This is a protected page — only authenticated users can see this.
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
