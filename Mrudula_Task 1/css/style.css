@@ -1,0 +1,205 @@
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a2e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =============================================
+   CONTAINER
+   ============================================= */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* =============================================
+   CALCULATOR WRAPPER
+   ============================================= */
+.calculator {
+  width: 320px;
+  background-color: #16213e;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* =============================================
+   DISPLAY SCREEN
+   ============================================= */
+.display {
+  background-color: #0f3460;
+  border-radius: 12px;
+  padding: 20px 20px 16px;
+  margin-bottom: 24px;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* Expression line (shows history e.g. "12 + 5 =") */
+.display__expression {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  min-height: 18px;
+  word-break: break-all;
+  text-align: right;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Main result number */
+.display__result {
+  font-size: 40px;
+  font-weight: 300;
+  color: #ffffff;
+  word-break: break-all;
+  text-align: right;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  transition: font-size 0.15s ease;
+}
+
+/* Shrink font if the number is long */
+.display__result.small {
+  font-size: 26px;
+  letter-spacing: -0.5px;
+}
+
+/* =============================================
+   BUTTON GRID
+   CSS Grid: 4 equal columns
+   ============================================= */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* =============================================
+   BUTTONS — BASE STYLE
+   ============================================= */
+.btn {
+  height: 64px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  outline: none;
+  transition:
+    background-color 0.15s ease,
+    transform 0.1s ease,
+    box-shadow 0.15s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Press animation */
+.btn:active {
+  transform: scale(0.92);
+}
+
+/* =============================================
+   BUTTON VARIANTS
+   ============================================= */
+
+/* Number buttons  (7 8 9, 4 5 6, 1 2 3, 0 .) */
+.btn--number {
+  background-color: #1a1a4e;
+  color: #e0e0ff;
+}
+
+.btn--number:hover {
+  background-color: #22224e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Action buttons  (C, ±, %) */
+.btn--action {
+  background-color: #533483;
+  color: #e0d7f5;
+  font-size: 18px;
+}
+
+.btn--action:hover {
+  background-color: #6a44a0;
+  box-shadow: 0 4px 12px rgba(83, 52, 131, 0.4);
+}
+
+/* Operator buttons  (÷, ×, −, +) */
+.btn--operator {
+  background-color: #e94560;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.btn--operator:hover {
+  background-color: #ff5c7a;
+  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
+}
+
+/* Highlight active operator */
+.btn--operator.active {
+  background-color: #ffffff;
+  color: #e94560;
+  box-shadow: 0 0 0 2px #e94560;
+}
+
+/* Equals button */
+.btn--equals {
+  background: linear-gradient(135deg, #e94560, #c23152);
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(233, 69, 96, 0.35);
+}
+
+.btn--equals:hover {
+  background: linear-gradient(135deg, #ff5c7a, #e94560);
+  box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5);
+}
+
+/* Zero button spans 2 columns */
+.btn--zero {
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 24px;
+}
+
+/* =============================================
+   RESPONSIVE — smaller screens
+   ============================================= */
+@media (max-width: 380px) {
+  .calculator {
+    width: 290px;
+    padding: 18px;
+  }
+
+  .btn {
+    height: 56px;
+    font-size: 18px;
+  }
+
+  .display__result {
+    font-size: 34px;
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="calculator">
+
+        <!-- Display Screen -->
+        <div class="display">
+          <div class="display__expression" id="expression"></div>
+          <div class="display__result" id="result">0</div>
+        </div>
+
+        <!-- Button Grid -->
+        <div class="buttons">
+
+          <!-- Row 1: Clear, Toggle Sign, Percent, Divide -->
+          <button class="btn btn--action" id="clear">C</button>
+          <button class="btn btn--action" id="toggle">&#177;</button>
+          <button class="btn btn--action" id="percent">%</button>
+          <button class="btn btn--operator" data-op="÷">÷</button>
+
+          <!-- Row 2: 7 8 9 Multiply -->
+          <button class="btn btn--number" data-num="7">7</button>
+          <button class="btn btn--number" data-num="8">8</button>
+          <button class="btn btn--number" data-num="9">9</button>
+          <button class="btn btn--operator" data-op="×">×</button>
+
+          <!-- Row 3: 4 5 6 Subtract -->
+          <button class="btn btn--number" data-num="4">4</button>
+          <button class="btn btn--number" data-num="5">5</button>
+          <button class="btn btn--number" data-num="6">6</button>
+          <button class="btn btn--operator" data-op="−">−</button>
+
+          <!-- Row 4: 1 2 3 Add -->
+          <button class="btn btn--number" data-num="1">1</button>
+          <button class="btn btn--number" data-num="2">2</button>
+          <button class="btn btn--number" data-num="3">3</button>
+          <button class="btn btn--operator" data-op="+">+</button>
+
+          <!-- Row 5: 0 (spans 2), Decimal, Equals -->
+          <button class="btn btn--number btn--zero" data-num="0">0</button>
+          <button class="btn btn--number" id="decimal">.</button>
+          <button class="btn btn--equals" id="equals">=</button>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="js/calculator.js"></script>
+  </body>
+</html>
